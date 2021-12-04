@@ -1,5 +1,7 @@
 import './App.css';
 import Search from './components/search/search';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Property from './components/property/property';
 
 function App() {
   
@@ -7,7 +9,16 @@ function App() {
   
   return (
     <div className="App">
-      <Search />
+      <Router>
+        <Switch>
+
+          <Route exact path = '/'>
+            <Search />
+          </Route>
+
+          <Route exact path = '/property/:id' component = { Property } />
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "headline": "Fantastic Family Living",
         "address": "47 Broadfield Street, Massey",
         "suburb": "Massey",
@@ -20,6 +21,7 @@
         }
     },
     {
+        "id": 2,
         "headline": "Right next to SkyCity casino",
         "address": "109 Hobson Street, Auckland CBD",
         "suburb": "Auckland CBD",
@@ -40,6 +42,7 @@
         }
     },
     {
+        "id": 3,
         "headline": "Watch stumbling drunks at 2.30 in the morning!",
         "address": "12 Commerce Street, Auckland CBD",
         "suburb": "Auckland CBD",
@@ -60,6 +63,7 @@
         }
     },
     {
+        "id": 4,
         "headline": "It's Massey, you get what you pay for",
         "address": "95 Kemp Road, Massey",
         "suburb": "Massey",
@@ -80,6 +84,7 @@
         }
     },
     {
+        "id": 5,
         "headline": "IDK Rosedale but this street name's lit",
         "address": "10 Omega Street, Rosedale",
         "suburb": "Rosedale",
@@ -100,6 +105,7 @@
         }
     },
     {
+        "id": 6,
         "headline": "lmao",
         "address": "179 Bush Road, Rosedale",
         "suburb": "Rosedale",
@@ -120,6 +126,7 @@
         }
     },
     {
+        "id": 7,
         "headline": "Eastside still rules these streets",
         "address": "80 Ridge Road, Howick",
         "suburb": "Howick",
@@ -140,6 +147,7 @@
         }
     },
     {
+        "id": 8,
         "headline": "Chat up the elderly ladies in Howick Village",
         "address": "22 Picton Street, Howick",
         "suburb": "Howick",
@@ -160,6 +168,7 @@
         }
     },
     {
+        "id": 9,
         "headline": "Catch COVID at the nearby Pak'n'Save!",
         "address": "60 Puhinui Road, Manukau City",
         "suburb": "Manukau City",
@@ -180,6 +189,7 @@
         }
     },
     {
+        "id": 10,
         "headline": "Pretty sure this is a retail store",
         "address": "11 Ronwood Avenue, Manukau City",
         "suburb": "Manukau City",
