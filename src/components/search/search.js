@@ -1,26 +1,147 @@
 import './search.css';
 import { FormControl, Select, MenuItem } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import map from '../../img/static-map.png';
+import PropertyPanel from '../housePanel/propertyPanel';
+
+import properties from '../../docs/properties.json';
 
 const Search = () => {
 
     const [open, setOpen] = useState(true);
+    const [recent, setRecent] = useState(true);
+    const [filtered, setFiltered] = useState();
+    const [filterD, setFilterD] = useState(false);
 
-    const [suburb, setSuburb] = useState();
-    const [botPrice, setBotPrice] = useState();
-    const [topPrice, setTopPrice] = useState();
-    const [beds, setBeds] = useState();
-    const [baths, setBaths] = useState();
+    const [suburb, setSuburb] = useState('Massey');
+    const [botPrice, setBotPrice] = useState(200);
+    const [topPrice, setTopPrice] = useState(1200);
+    const [beds, setBeds] = useState(1);
+    const [baths, setBaths] = useState(1);
     const [pets, setPets] = useState(false);
     const [parks, setParks] = useState(false);
     const [furnish, setFurnish] = useState(false);
     const [smoking, setSmoking] = useState(false);
 
-    const handleChange = (e) => {
+    const [displayObj, setDisplayObj] = useState();
 
-        console.log(e);
+    useEffect(() => {
+        setDisplayObj();
+        let conditions = {
+            suburb: '',
+            lowPrice: 0,
+            highPrice: 0,
+            beds: 0,
+            baths: 0,
+            pets: false,
+            parks: false,
+            furnish: false,
+            smoking: false,
+        };
+        const filters = [suburb, botPrice, topPrice, beds, baths, pets, parks, furnish, smoking];
+        filters.forEach((item, index) => {
+            if (item != undefined && item != false) {
+                if (index === 0) {
+                    conditions.suburb = suburb;
+                } else if (index === 1) {
+                    conditions.lowPrice = botPrice;
+                } else if (index === 2) {
+                    conditions.highPrice = topPrice;
+                } else if (index === 3) {
+                    conditions.beds = beds;
+                } else if (index === 4) {
+                    conditions.baths = baths;
+                } else if (index === 5) {
+                    conditions.pets = pets;
+                } else if (index === 6) {
+                    conditions.parks = parks;
+                } else if (index === 7) {
+                    conditions.furnish = furnish;
+                } else if (index === 8) {
+                    conditions.smoking = smoking;
+                }
+            }
+            else {
+                console.log('filter not applied');
+            }
+        })
+        setDisplayObj(conditions);
+
+    }, [suburb, botPrice, topPrice, beds, baths, pets, parks, furnish, smoking]);
+
+    const handleSearch = () => {
+        setRecent(false);
+        console.log(displayObj)
+        const filteredProperties = [];
+        properties.forEach(property => {
+            /* if (property.suburb === displayObj.suburb) {
+                console.log(property);
+            }
+            if (property.price >= displayObj.lowPrice && property.price <= displayObj.highPrice) {
+                console.log(property)
+            } */
+            /* if (property.beds >= displayObj.beds) {
+                console.log(property)
+            } */
+            /* if (property.baths >= displayObj.baths) {
+                console.log(property)
+            } */
+            /* if (property.pets === displayObj.pets) {
+                console.log(property)
+            } */
+            /* if (displayObj.parks) {
+                if (property.parks > 0) {
+                    console.log(property);
+                }
+            } */
+            /* if (property.furnished === displayObj.furnish) {
+                console.log(property)
+            } */
+            /* if (property.smoking === displayObj.smoking) {
+                console.log(property)
+            } */
+            if ((property.suburb === displayObj.suburb) &&
+            (property.price >= displayObj.lowPrice && property.price <= displayObj.highPrice) &&
+            (property.beds >= displayObj.beds) &&
+            (property.baths >= displayObj.baths) &&
+            (property.pets === displayObj.pets) &&
+            (property.availParks === displayObj.parks) &&
+            (property.furnished === displayObj.furnish) &&
+            (property.smoking === displayObj.smoking)) {
+                filteredProperties.push(property);
+                setFilterD(true);
+                setFiltered(filteredProperties)
+            } else {
+                console.log('property not matched')
+            }
+        })
+
+        
+    }
+
+
+    const handleChange = (e, id) => {
+
+        if (id === 'suburb') {
+            setSuburb(e)
+        } else if (id === 'bot-price') {
+            setBotPrice(e)
+        } else if (id === 'top-price') {
+            setTopPrice(e)
+        } else if (id === 'bedrooms') {
+            setBeds(e)
+        } else if (id === 'bathrooms') {
+            setBaths(e)
+        } else if (id === 'pets') {
+            !pets ? setPets(true) : setPets(false)
+        } else if (id === 'parks') {
+            !parks ? setParks(true) : setParks(false)
+        } else if (id === 'furnish') {
+            !furnish ? setFurnish(true) : setFurnish(false)
+        } else if (id === 'smoking') {
+            !smoking ? setSmoking(true) : setSmoking(false)
+        }
 
     }
 
@@ -56,7 +177,7 @@ const Search = () => {
                             <Select labelId = 'suburb-label-id' id = 'suburb-select'
                                 value = { suburb } onChange = {(e) => handleChange(e.target.value, 'suburb')}
                                 className = 'select-container'>
-                                    <MenuItem value = 'Arch Hill'>Auckland CBD</MenuItem>
+                                    <MenuItem value = 'Auckland CBD'>Auckland CBD</MenuItem>
                                     <MenuItem value = 'Howick'>Howick</MenuItem>
                                     <MenuItem value = 'Manukau City'>Manukau City</MenuItem>
                                     <MenuItem value = 'Massey'>Massey</MenuItem>
@@ -72,32 +193,32 @@ const Search = () => {
                             <Select labelId = 'bot-price-label-id' id = 'bot-price-select'
                                 value = { botPrice } onChange = {(e) => handleChange(e.target.value, 'bot-price')}
                                 className = 'price-select-container' >
-                                    <MenuItem value = '200'>$200</MenuItem>
-                                    <MenuItem value = '300'>$300</MenuItem>
-                                    <MenuItem value = '400'>$400</MenuItem>
-                                    <MenuItem value = '500'>$500</MenuItem>
-                                    <MenuItem value = '600'>$600</MenuItem>
-                                    <MenuItem value = '700'>$700</MenuItem>
-                                    <MenuItem value = '800'>$800</MenuItem>
-                                    <MenuItem value = '900'>$900</MenuItem>
-                                    <MenuItem value = '1000'>$1000</MenuItem>
-                                    <MenuItem value = '1100'>$1100</MenuItem>
+                                    <MenuItem value = {200}>$200</MenuItem>
+                                    <MenuItem value = {300}>$300</MenuItem>
+                                    <MenuItem value = {400}>$400</MenuItem>
+                                    <MenuItem value = {500}>$500</MenuItem>
+                                    <MenuItem value = {600}>$600</MenuItem>
+                                    <MenuItem value = {700}>$700</MenuItem>
+                                    <MenuItem value = {800}>$800</MenuItem>
+                                    <MenuItem value = {900}>$900</MenuItem>
+                                    <MenuItem value = {1000}>$1000</MenuItem>
+                                    <MenuItem value = {1100}>$1100</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl className = 'price-form'>
                             <Select labelId = 'top-price-label-id' id = 'top-price-select'
                                 value = { topPrice } onChange = {(e) => handleChange(e.target.value, 'top-price')}
                                 className = 'top-price-select-container' >
-                                    <MenuItem value = '300'>$300</MenuItem>
-                                    <MenuItem value = '400'>$400</MenuItem>
-                                    <MenuItem value = '500'>$500</MenuItem>
-                                    <MenuItem value = '600'>$600</MenuItem>
-                                    <MenuItem value = '700'>$700</MenuItem>
-                                    <MenuItem value = '800'>$800</MenuItem>
-                                    <MenuItem value = '900'>$900</MenuItem>
-                                    <MenuItem value = '1000'>$1000</MenuItem>
-                                    <MenuItem value = '1100'>$1100</MenuItem>
-                                    <MenuItem value = '1200'>$1200</MenuItem>
+                                    <MenuItem value = {300}>$300</MenuItem>
+                                    <MenuItem value = {400}>$400</MenuItem>
+                                    <MenuItem value = {500}>$500</MenuItem>
+                                    <MenuItem value = {600}>$600</MenuItem>
+                                    <MenuItem value = {700}>$700</MenuItem>
+                                    <MenuItem value = {800}>$800</MenuItem>
+                                    <MenuItem value = {900}>$900</MenuItem>
+                                    <MenuItem value = {1000}>$1000</MenuItem>
+                                    <MenuItem value = {1100}>$1100</MenuItem>
+                                    <MenuItem value = {1200}>$1200</MenuItem>
                             </Select>
                         </FormControl>
                         </div>
@@ -142,7 +263,7 @@ const Search = () => {
 
                             <div className = 'check-input-container'>
                                 <input type = 'checkbox' className = 'extras-check' value = 'parks'
-                                    onClick = { (e) => handleChange(e.target.value, 'furnish')} />
+                                    onClick = { (e) => handleChange(e.target.value, 'parks')} />
                                 <p className = 'check-title'>Car Park Available</p>
                             </div>
 
@@ -162,7 +283,8 @@ const Search = () => {
                         {
                             open ?
                                 <>
-                                    <input type = 'button' value = 'Search' className = 'search-btn' />
+                                    <input type = 'button' value = 'Search' className = 'search-btn'
+                                        onClick = {() => handleSearch() } />
                                 </>
                             : <></>
                         }
@@ -178,6 +300,58 @@ const Search = () => {
 
                 </div>
             </div>
+
+            {
+                (recent) ?
+                    <>
+                    <h1 className = 'search-title'>Recently Added</h1>
+                        <div className = 'properties-wrap'>
+                            {
+                                properties.map(property => (
+                                    <>
+                                    <PropertyPanel
+                                        headline = {property.headline}
+                                        address = {property.address}
+                                        available = {property.availability}
+                                        beds = {property.beds}
+                                        baths = {property.baths}
+                                        parks = {property.parks}
+                                        price = {property.price} />
+                                    </>
+
+                                ))
+                            }
+                        </div>
+                    </> : <></>
+            }
+            {
+                (filtered) ?
+                    <>
+                        <h1 className = 'search-title'>Search Results</h1>
+                        <div className = 'properties-wrap'>
+                            {
+                                filtered.map(property => (
+                                    <>
+                                        <PropertyPanel
+                                            headline = {property.headline}
+                                            address = {property.address}
+                                            available = {property.availability}
+                                            beds = {property.beds}
+                                            baths = {property.baths}
+                                            parks = {property.parks}
+                                            price = {property.price} />
+                                    </>
+                                ))
+                            }
+                        </div>
+                    </>
+                    :
+                    <>
+                        <p>No properties found</p>
+                    </>
+            }
+            
+            
 
 
         </div>

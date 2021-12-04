@@ -2,6 +2,7 @@
     width: 100%;
     padding: 25px 0px;
     display: flex;
+    flex-direction: column;
     background-color: #F3F3F3;
 }
 
@@ -139,4 +140,18 @@
 
 .check-title {
     margin: 10px 0;
+}
+
+/* Testing */
+
+.search-title {
+    margin-left: 10%;
+}
+
+.properties-wrap {
+    width: 90%;
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
