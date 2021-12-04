@@ -19,10 +19,10 @@ const Search = () => {
     const [topPrice, setTopPrice] = useState(1200);
     const [beds, setBeds] = useState(1);
     const [baths, setBaths] = useState(1);
-    const [pets, setPets] = useState(false);
-    const [parks, setParks] = useState(false);
-    const [furnish, setFurnish] = useState(false);
-    const [smoking, setSmoking] = useState(false);
+    const [pets, setPets] = useState(true);
+    const [parks, setParks] = useState(true);
+    const [furnish, setFurnish] = useState(true);
+    const [smoking, setSmoking] = useState(true);
 
     const [displayObj, setDisplayObj] = useState();
     const history = useHistory();
@@ -132,6 +132,10 @@ const Search = () => {
         history.push('/property/' + id);
     }
 
+    const handleSort = () => {
+        filtered.forEach(property => console.log(property));
+    }
+
     return (
         <div className = 'body-container'>
 
@@ -166,7 +170,7 @@ const Search = () => {
                                         <MenuItem value = 'Howick'>Howick</MenuItem>
                                         <MenuItem value = 'Manukau City'>Manukau City</MenuItem>
                                         <MenuItem value = 'Massey'>Massey</MenuItem>
-                                        <MenuItem value = 'Pinehill'>Pinehill</MenuItem>
+                                        <MenuItem value = 'Sunnynook'>Sunnynook</MenuItem>
                                 </Select>
                             </FormControl>
                         </div>
@@ -241,25 +245,25 @@ const Search = () => {
                         <div className = 'bottom-wrapper' style = {{margin: open ? '10px auto' : '0px'}}>
                             <div className = 'extras-container'>
                                 <div className = 'check-input-container'>
-                                    <input type = 'checkbox' className = 'extras-check' value = 'pets'
+                                    <input type = 'checkbox' className = 'extras-check' value = 'pets' defaultChecked
                                         onClick = { (e) =>  handleChange(e.target.value, 'pets')} />
                                     <p className = 'check-title'>Pet Friendly</p>
                                 </div>
 
                                 <div className = 'check-input-container'>
-                                    <input type = 'checkbox' className = 'extras-check' value = 'parks'
+                                    <input type = 'checkbox' className = 'extras-check' value = 'parks' defaultChecked
                                         onClick = { (e) => handleChange(e.target.value, 'parks')} />
                                     <p className = 'check-title'>Car Park Available</p>
                                 </div>
 
                                 <div className = 'check-input-container'>
-                                    <input type = 'checkbox' className = 'extras-check' value = 'furnish'
+                                    <input type = 'checkbox' className = 'extras-check' value = 'furnish' defaultChecked
                                         onClick = { (e) => handleChange(e.target.value, 'furnish')} />
                                     <p className = 'check-title'>Fully Furnished</p>
                                 </div>
 
                                 <div className = 'check-input-container'>
-                                    <input type = 'checkbox' className = 'extras-check' value = 'smoking'
+                                    <input type = 'checkbox' className = 'extras-check' value = 'smoking' defaultChecked
                                         onClick = { (e) => handleChange(e.target.value, 'smoking') } />
                                     <p className = 'check-title'>Smoking Allowed</p> 
                                 </div>
@@ -287,55 +291,57 @@ const Search = () => {
                 </div>
             </div>
 
-            {/* {
-                (recent.length > 0) ?
-                    <>
-                    <h1 className = 'search-title'>Recently Added</h1>
-                        <div className = 'properties-wrap'>
-                            {
-                                properties.map(property => (
-                                    <div>
-                                        <PropertyPanel
-                                            headline = {property.headline}
-                                            address = {property.address}
-                                            available = {property.availability}
-                                            beds = {property.beds}
-                                            baths = {property.baths}
-                                            parks = {property.parks}
-                                            price = {property.price} />
-                                    </div>
-
-                                ))
-                            }
-                        </div>
-                    </> : <></>
-            } */}
             {
-                (filtered) ?
+
+                (recent) ?
                     <>
-                        <h1 className = 'search-title'>Search Results</h1>
-                        <div className = 'properties-wrap'>
-                            {
-                                filtered.map(property => (
-                                    <div onClick = {() => openProperty(property.id) }>
-                                        <PropertyPanel
-                                            image = {property.image}
-                                            headline = {property.headline}
-                                            address = {property.address}
-                                            available = {property.availability}
-                                            beds = {property.beds}
-                                            baths = {property.baths}
-                                            parks = {property.parks}
-                                            price = {property.price} />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                        <h1 className = 'search-title'>Recently Added</h1>
+                            <div className = 'properties-wrap'>
+                                {
+                                    properties ? properties.map(property => (
+                                            <div onClick = {() => openProperty(property.id) }>
+                                                <PropertyPanel
+                                                    image = {property.image}
+                                                    headline = {property.headline}
+                                                    address = {property.address}
+                                                    available = {property.availability}
+                                                    beds = {property.beds}
+                                                    baths = {property.baths}
+                                                    parks = {property.parks}
+                                                    price = {property.price} />
+                                            </div>
+
+                                    )): <></>
+                                }
+                            </div>
                     </>
-                    :
-                    <>
-                        <p>No properties found</p>
-                    </>
+                :
+                    (filtered) ?
+                        <>
+                            <h1 className = 'search-title'>Search Results</h1>
+                            <input type = 'button' value = 'Sort' onClick = {() => handleSort()} />
+                            <div className = 'properties-wrap'>
+                                {
+                                    filtered.map(property => (
+                                        <div onClick = {() => openProperty(property.id) }>
+                                            <PropertyPanel
+                                                image = {property.image}
+                                                headline = {property.headline}
+                                                address = {property.address}
+                                                available = {property.availability}
+                                                beds = {property.beds}
+                                                baths = {property.baths}
+                                                parks = {property.parks}
+                                                price = {property.price} />
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </>
+                        :
+                        <>
+                            <p>No properties found</p>
+                        </>
             }
             
             
