@@ -3,14 +3,13 @@ import './propertyPanel.css';
 import bed_icon from '../../img/propertyPanel/bed-icon.png';
 import bath_icon from '../../img/propertyPanel/bath-icon.png';
 import parks_icon from '../../img/propertyPanel/parks-icon.png';
-import house_img from '../../img/placeholder/house-img.png';
 
 const PropertyPanel = (props) => {
     return (
         <div className = 'property-wrapper'>
 
             <div className = 'property-img-wrapper'>
-                <img src = { house_img } className = 'property-img' />
+                <img src = { props.image } className = 'property-img' />
             </div>
 
             <div className = 'detail-container'>

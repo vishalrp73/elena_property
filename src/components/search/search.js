@@ -12,7 +12,6 @@ const Search = () => {
     const [open, setOpen] = useState(true);
     const [recent, setRecent] = useState(true);
     const [filtered, setFiltered] = useState();
-    const [filterD, setFilterD] = useState(false);
     const [properties, setProperties] = useState();
 
     const [suburb, setSuburb] = useState('Massey');
@@ -93,10 +92,9 @@ const Search = () => {
             (property.furnished === displayObj.furnish) &&
             (property.smoking === displayObj.smoking)) {
                 filteredProperties.push(property);
-                setFilterD(true);
                 setFiltered(filteredProperties)
             } else {
-                console.log('property not matched')
+                console.log('house not matched')
             }
         })
     }
@@ -168,7 +166,7 @@ const Search = () => {
                                         <MenuItem value = 'Howick'>Howick</MenuItem>
                                         <MenuItem value = 'Manukau City'>Manukau City</MenuItem>
                                         <MenuItem value = 'Massey'>Massey</MenuItem>
-                                        <MenuItem value = 'Rosedale'>Rosedale</MenuItem>
+                                        <MenuItem value = 'Pinehill'>Pinehill</MenuItem>
                                 </Select>
                             </FormControl>
                         </div>
@@ -321,6 +319,7 @@ const Search = () => {
                                 filtered.map(property => (
                                     <div onClick = {() => openProperty(property.id) }>
                                         <PropertyPanel
+                                            image = {property.image}
                                             headline = {property.headline}
                                             address = {property.address}
                                             available = {property.availability}
