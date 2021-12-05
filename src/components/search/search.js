@@ -304,7 +304,9 @@ const Search = () => {
 
                 (recent) ?
                     <>
-                        <h1 className = 'search-title'>Recently Added</h1>
+                        <div className = 'bar-wrap'>
+                            <h1 className = 'search-title'>Recently Added</h1>
+                        </div>
                             <div className = 'properties-wrap'>
                                 {
                                     properties ? properties.map(property => (
@@ -326,28 +328,30 @@ const Search = () => {
                     </>
                 :
                 (sort) ?
-                    <div className = 'properties-wrap'>
+                    <>
                         <div className = 'bar-wrap'>
                             <h1 className = 'search-title'>Search Results</h1>
                             <input type = 'button' value = 'Sort' onClick = {() => handleSort()}
                                 className = 'sort-btn' />
                         </div>
-                            {
-                                sort.map(property => (
-                                    <div onClick = {() => openProperty(property.id)}>
-                                        <PropertyPanel
-                                            image = {property.image}
-                                            headline = {property.headline}
-                                            address = {property.address}
-                                            available = {property.availability}
-                                            beds = {property.beds}
-                                            baths = {property.baths}
-                                            parks = {property.parks}
-                                            price = {property.price} />
-                                    </div>
-                                ))
-                            }
-                    </div>
+                            <div className = 'properties-wrap'>
+                                {
+                                    sort.map(property => (
+                                        <div onClick = {() => openProperty(property.id)}>
+                                            <PropertyPanel
+                                                image = {property.image}
+                                                headline = {property.headline}
+                                                address = {property.address}
+                                                available = {property.availability}
+                                                beds = {property.beds}
+                                                baths = {property.baths}
+                                                parks = {property.parks}
+                                                price = {property.price} />
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                    </>
                     :
                     (filtered) ?
                         <>
