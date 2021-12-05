@@ -6,13 +6,16 @@ import { useHistory } from 'react-router-dom';
 import map from '../../img/static-map.png';
 import PropertyPanel from '../housePanel/propertyPanel';
 
+import { Sort } from '../../functions/quickSort';
 
 const Search = () => {
+
 
     const [open, setOpen] = useState(true);
     const [recent, setRecent] = useState(true);
     const [filtered, setFiltered] = useState();
     const [properties, setProperties] = useState();
+    const [sort, setSort] = useState();
 
     const [suburb, setSuburb] = useState('Massey');
     const [botPrice, setBotPrice] = useState(200);
@@ -79,6 +82,7 @@ const Search = () => {
     }, [suburb, botPrice, topPrice, beds, baths, pets, parks, furnish, smoking]);
 
     const handleSearch = () => {
+        setSort();
         setRecent(false);
         console.log(displayObj)
         const filteredProperties = [];
@@ -120,7 +124,6 @@ const Search = () => {
         } else if (id === 'smoking') {
             !smoking ? setSmoking(true) : setSmoking(false)
         }
-
     }
 
     const toggleStyle = () => {
@@ -133,8 +136,14 @@ const Search = () => {
     }
 
     const handleSort = () => {
-        filtered.forEach(property => console.log(property));
+        const sorted = Sort(filtered);
+        console.log(sorted);
+        setSort(sorted);
     }
+
+    useEffect(() => {
+        console.log(filtered)
+    }, [filtered]);
 
     return (
         <div className = 'body-container'>
@@ -316,10 +325,37 @@ const Search = () => {
                             </div>
                     </>
                 :
+                (sort) ?
+                    <div className = 'properties-wrap'>
+                        <div className = 'bar-wrap'>
+                            <h1 className = 'search-title'>Search Results</h1>
+                            <input type = 'button' value = 'Sort' onClick = {() => handleSort()}
+                                className = 'sort-btn' />
+                        </div>
+                            {
+                                sort.map(property => (
+                                    <div onClick = {() => openProperty(property.id)}>
+                                        <PropertyPanel
+                                            image = {property.image}
+                                            headline = {property.headline}
+                                            address = {property.address}
+                                            available = {property.availability}
+                                            beds = {property.beds}
+                                            baths = {property.baths}
+                                            parks = {property.parks}
+                                            price = {property.price} />
+                                    </div>
+                                ))
+                            }
+                    </div>
+                    :
                     (filtered) ?
                         <>
-                            <h1 className = 'search-title'>Search Results</h1>
-                            <input type = 'button' value = 'Sort' onClick = {() => handleSort()} />
+                            <div className = 'bar-wrap'>
+                                <h1 className = 'search-title'>Search Results</h1>
+                                <input type = 'button' value = 'Sort' onClick = {() => handleSort()}
+                                    className = 'sort-btn' />
+                            </div>
                             <div className = 'properties-wrap'>
                                 {
                                     filtered.map(property => (

@@ -144,14 +144,39 @@
 
 /* Testing */
 
-.search-title {
-    margin-left: 10%;
-}
-
 .properties-wrap {
     width: 90%;
     margin: 25px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.bar-wrap {
+    width: 80%;
+    margin: 25px auto;
+    display: flex;
+}
+
+.search-title {
+    margin: 0;
+}
+
+.sort-btn {
+    width: 100px;
+    height: 35px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin: auto 0 auto auto;
+    cursor: pointer;
+}
+
+.sort-btn:hover {
+    filter: brightness(0.5);
+}
+
+.sort-btn:active {
+    filter: brightness(2);
 }
