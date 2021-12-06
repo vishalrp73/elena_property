@@ -2,6 +2,7 @@ import './App.css';
 import Search from './components/search/search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Property from './components/property/property';
+import Navbar from './components/navbar/navbar';
 
 function App() {
   
@@ -9,6 +10,9 @@ function App() {
   
   return (
     <div className="App">
+    <Navbar/>
+
+
       <Router>
         <Switch>
 
