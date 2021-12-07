@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 import map from '../../img/static-map.png';
 import PropertyPanel from '../housePanel/propertyPanel';
+import sort_img from '../../img/sort-img.png';
 
 import { Sort } from '../../functions/quickSort';
 
@@ -16,6 +17,7 @@ const Search = () => {
     const [filtered, setFiltered] = useState();
     const [properties, setProperties] = useState();
     const [sort, setSort] = useState();
+    const [sortPrice, setSortPrice] = useState(false);
 
     const [suburb, setSuburb] = useState('Massey');
     const [botPrice, setBotPrice] = useState(200);
@@ -136,9 +138,34 @@ const Search = () => {
     }
 
     const handleSort = () => {
-        const sorted = Sort(filtered);
-        console.log(sorted);
-        setSort(sorted);
+
+        // States: false = sort by lowest, true = sort by highest
+
+        if (filtered) {
+            const sorted = Sort(filtered);
+            if (!sortPrice) {
+                console.log(sorted);
+                setSort(sorted);
+                setSortPrice(true); // Switching state to indicate next click will be by highest price
+            } else if (sortPrice) {
+                sorted.reverse();
+                setSort(sorted);
+                setSortPrice(false); // Switching state to indicate next click will be by lowest price
+            }
+        } else {
+            const sorted = Sort(properties);
+            if (!sortPrice) {
+                console.log(sorted);
+                setSort(sorted);
+                setSortPrice(true);
+            } else if (sortPrice) {
+                sorted.reverse();
+                setSort(sorted);
+                setSortPrice(false);
+            }
+        }
+
+        
     }
 
     useEffect(() => {
@@ -156,12 +183,13 @@ const Search = () => {
                     </div>
 
                     <div className = 'search-func-container'
-                        style = {{width: open ? '50%' : '100%', flexDirection: open ? 'column' : 'row'}} >
+                        style = {{width: open ? '50%' : '100%', flexDirection: open ? 'column' : 'row',
+                                    padding: open ? '50px 0px' : '10px'}} >
                             {
                                 open ?
                                     <>
                                     <div className = 'top_bar-container'>
-                                        <h2 className = 'search-title'>Search Listings</h2>
+                                        <h2 className = 'search-title-top'>Search Listings</h2>
                                         <h2 className = 'close__bar' onClick = {() => toggleStyle()}>^</h2>
                                     </div>
                                     </>
@@ -306,6 +334,11 @@ const Search = () => {
                     <>
                         <div className = 'bar-wrap'>
                             <h1 className = 'search-title'>Recently Added</h1>
+                            <div className = 'sort-btn-container' onClick = {() => handleSort()}>
+                                    <img src = { sort_img } className = 'sort-img'
+                                        style = {{transform: sortPrice ? 'rotate(180deg)' : 'rotate(0deg)'}} />
+                                <p className = 'sort-text'>SORT</p>
+                            </div>
                         </div>
                             <div className = 'properties-wrap'>
                                 {
@@ -331,8 +364,12 @@ const Search = () => {
                     <>
                         <div className = 'bar-wrap'>
                             <h1 className = 'search-title'>Search Results</h1>
-                            <input type = 'button' value = 'Sort' onClick = {() => handleSort()}
-                                className = 'sort-btn' />
+
+                            <div className = 'sort-btn-container' onClick = {() => handleSort()}>
+                                <img src = { sort_img } className = 'sort-img'
+                                    style = {{transform: sortPrice ? 'rotate(180deg)' : 'rotate(0deg)'}} />
+                                <p className = 'sort-text'>SORT</p>
+                            </div>
                         </div>
                             <div className = 'properties-wrap'>
                                 {
@@ -357,8 +394,11 @@ const Search = () => {
                         <>
                             <div className = 'bar-wrap'>
                                 <h1 className = 'search-title'>Search Results</h1>
-                                <input type = 'button' value = 'Sort' onClick = {() => handleSort()}
-                                    className = 'sort-btn' />
+                                <div className = 'sort-btn-container' onClick = {() => handleSort()} >
+                                    <img src = { sort_img } className = 'sort-img'
+                                        style = {{transform: sortPrice ? 'rotate(180deg)' : 'rotate(0deg)'}} />
+                                <p className = 'sort-text'>SORT</p>
+                            </div>
                             </div>
                             <div className = 'properties-wrap'>
                                 {

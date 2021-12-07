@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "./navbar.css";
 import nav from "../../img/navbar/nav.png";
 import { FaSearch } from 'react-icons/fa';
+import { useHistory } from 'react-router-dom';
 
 
 const NavLink = styled(Link)`
@@ -40,6 +41,14 @@ const Menu = styled.ul`
 
 
 const Navbar = () => {
+
+  const history = useHistory();
+
+  const pushNav = () => {
+    history.push('/');
+    window.location.reload(false);
+  }
+
   return (
     <>
       <Nav>
@@ -50,18 +59,18 @@ const Navbar = () => {
         </Logo>
         <Menu>
           <div className="nav">
-            <NavLink to={"/"}>
+            <NavLink to={"/"} onClick = {() => pushNav()}>
               <li>Management</li>
             </NavLink>
 
-            <NavLink to={"/"}>
+            <NavLink to={"/"} onClick = {() => pushNav()}>
               <li>About Us</li>
             </NavLink>
 
-            <NavLink to={"/"}>Property Search</NavLink>
-            <NavLink to={"/"}>FAQ</NavLink>
-            <NavLink to={"/"}>Contact Us</NavLink>
-            <NavLink to={"/"}><FaSearch/></NavLink>
+            <NavLink to={"/"} onClick = {() => pushNav()}>Property Search</NavLink>
+            <NavLink to={"/"} onClick = {() => pushNav()}>FAQ</NavLink>
+            <NavLink to={"/"} onClick = {() => pushNav()}>Contact Us</NavLink>
+            <NavLink to={"/"} onClick = {() => pushNav()}><FaSearch/></NavLink>
           </div>
         </Menu>
       </Nav>
