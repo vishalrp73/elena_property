@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "headline": "Fantastic Family Living",
+        "address": "47 Broadfield Street, Massey",
+        "suburb": "Massey",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 2,
+        "baths": 1,
+        "parks": 1,
+        "price": 690,
+        "pets": true,
+        "furnished": true,
+        "smoking": false,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 2,
+        "headline": "Right next to SkyCity casino",
+        "address": "109 Hobson Street, Auckland CBD",
+        "suburb": "Auckland CBD",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 1,
+        "baths": 1,
+        "parks": 0,
+        "price": 1000,
+        "pets": false,
+        "furnished": false,
+        "smoking": false,
+        "availParks": false,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 3,
+        "headline": "Watch stumbling drunks at 2.30 in the morning!",
+        "address": "12 Commerce Street, Auckland CBD",
+        "suburb": "Auckland CBD",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 1,
+        "baths": 1,
+        "parks": 1,
+        "price": 1100,
+        "pets": false,
+        "furnished": false,
+        "smoking": true,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 4,
+        "headline": "It's Massey, you get what you pay for",
+        "address": "95 Kemp Road, Massey",
+        "suburb": "Massey",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 4,
+        "baths": 3,
+        "parks": 2,
+        "price": 450,
+        "pets": true,
+        "furnished": false,
+        "smoking": true,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 5,
+        "headline": "IDK Rosedale but this street name's lit",
+        "address": "10 Omega Street, Rosedale",
+        "suburb": "Rosedale",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 4,
+        "baths": 4,
+        "parks": 3,
+        "price": 1200,
+        "pets": true,
+        "furnished": true,
+        "smoking": true,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 6,
+        "headline": "lmao",
+        "address": "179 Bush Road, Rosedale",
+        "suburb": "Rosedale",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 2,
+        "baths": 2,
+        "parks": 2,
+        "price": 900,
+        "pets": false,
+        "furnished": false,
+        "smoking": true,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 7,
+        "headline": "Eastside still rules these streets",
+        "address": "80 Ridge Road, Howick",
+        "suburb": "Howick",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 3,
+        "baths": 2,
+        "parks": 0,
+        "price": 550,
+        "pets": true,
+        "furnished": true,
+        "smoking": true,
+        "availParks": false,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 8,
+        "headline": "Chat up the elderly ladies in Howick Village",
+        "address": "22 Picton Street, Howick",
+        "suburb": "Howick",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 3,
+        "baths": 2,
+        "parks": 1,
+        "price": 800,
+        "pets": true,
+        "furnished": true,
+        "smoking": false,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 9,
+        "headline": "Catch COVID at the nearby Pak'n'Save!",
+        "address": "60 Puhinui Road, Manukau City",
+        "suburb": "Manukau City",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 2,
+        "baths": 2,
+        "parks": 0,
+        "price": 500,
+        "pets": true,
+        "furnished": false,
+        "smoking": true,
+        "availParks": false,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    },
+    {
+        "id": 10,
+        "headline": "Pretty sure this is a retail store",
+        "address": "11 Ronwood Avenue, Manukau City",
+        "suburb": "Manukau City",
+        "image": "s3-bucket-placeholder",
+        "availability": "Tues, 7 Dec",
+        "beds": 1,
+        "baths": 1,
+        "parks": 2,
+        "price": 400,
+        "pets": false,
+        "furnished": false,
+        "smoking": false,
+        "availParks": true,
+        "realtor": {
+            "name": "Tim Harrington",
+            "realtor_photo": "s3-bucket",
+            "email": "tim.harrington@aucklandproperty.net"
+        }
+    }
+]
