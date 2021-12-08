@@ -1,0 +1,127 @@
+.body-container{
+    height: auto;
+    width: 100vw;
+    display: grid;
+    margin-left: 15vw;
+}
+
+.body-navbar{
+    display: flex;
+    width: 100vw;
+    height: auto;
+}
+
+.body-information{
+    width: 60vw;
+    height: auto;
+    display: flex;
+}
+
+.body-header{
+    width: 20vw;
+    height: auto;
+    display: flex;
+}
+
+.body-rental-credentials{
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.body-footer{
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.body-footer-book-btn{
+    width: 180px;
+    height: 55px;
+    background-color: white;
+    border-color: #B71234;
+    color: #B71234;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10vw;
+    border-radius: 20px;
+}
+
+.body-footer-apply-btn{
+    width: 180px;
+    height: 55px;
+    background-color: #B71234;
+    border-color: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 2vw;
+    border-radius: 20px;
+}
+
+.body-right-book-btn{
+    width: 180px;
+    height: 55px;
+    background-color: white;
+    border-color: #B71234;
+    color: #B71234;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 2vw;
+    margin-top: 15vh;
+}
+
+.body-right-apply-btn{
+    width: 180px;
+    height: 55px;
+    background-color: #B71234;
+    border-color: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 1vh;
+    margin-left: 2vw;
+}
+
+.body-right{
+    margin-left: 2vw;
+}
+
+.body-right-btns{
+    display: grid;
+}
+
+.body-right-agent{
+    margin-top: 2vh;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.body-right-terms{
+    margin-top: 10vh;
+    border: solid 2px #B71234;
+}
+
+.body-navbar-btn{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.body-navbar-right{
+    margin-left: 16vw;
+}
+
+.body-print-btn{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    color: #B71234;
+    font-size: 25px;
+}
+
+.body-header-right{
+    margin-left: 10vw;
+}
