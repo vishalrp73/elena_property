@@ -1,7 +1,7 @@
 import './search.css';
 import { FormControl, Select, MenuItem } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import map from '../../img/static-map.png';
 import PropertyPanel from '../housePanel/propertyPanel';
@@ -28,7 +28,7 @@ const Search = () => {
     const [smoking, setSmoking] = useState(true);
 
     const [displayObj, setDisplayObj] = useState();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/properties')
@@ -132,7 +132,7 @@ const Search = () => {
 
     const openProperty = (id) => {
         console.log(id);
-        history.push('/property/' + id);
+        navigate('/property/' + id);
     }
 
     const handleSort = () => {

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "./navbar.css";
 import nav from "../../img/navbar/nav.png";
 import { FaSearch } from 'react-icons/fa';
+import FormDialog from './dialog';
 
 
 const NavLink = styled(Link)`
@@ -62,6 +63,7 @@ const Navbar = () => {
             <NavLink to={"/"}>FAQ</NavLink>
             <NavLink to={"/"}>Contact Us</NavLink>
             <NavLink to={"/"}><FaSearch/></NavLink>
+            <NavLink to={"/"}><FormDialog /></NavLink>
           </div>
         </Menu>
       </Nav>

@@ -1,28 +1,21 @@
-import './App.css';
-import Search from './components/search/search';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Property from './components/property/property';
-import Navbar from './components/navbar/navbar';
+import "./App.css";
+import Search from "./components/search/search";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Property from "./components/property/property";
+import Navbar from "./components/navbar/navbar";
 
 function App() {
-  
-  console.log('search function branch');
-  
+  console.log("search function branch");
+
   return (
     <div className="App">
-    <Navbar/>
+      <Navbar />
 
+      <Routes>
+        <Route path="/" element={<Search />}></Route>
 
-      <Router>
-        <Switch>
-
-          <Route exact path = '/'>
-            <Search />
-          </Route>
-
-          <Route exact path = '/property/:id' component = { Property } />
-        </Switch>
-      </Router>
+        <Route path="/property/:id" element={Property} />
+      </Routes>
     </div>
   );
 }
