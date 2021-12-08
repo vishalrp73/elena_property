@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import Body from '../propertyBody/Body';
+
 const Property = ( {match} ) => {
     
     const [property, setProperty] = useState();

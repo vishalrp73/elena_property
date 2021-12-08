@@ -1,7 +1,7 @@
 import './App.css';
 import Search from './components/search/search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Property from './components/property/property';
+import Body from './components/propertyBody/Body';
 import Navbar from './components/navbar/navbar';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Search />
           </Route>
 
-          <Route exact path = '/property/:id' component = { Property } />
+          <Route exact path = '/property/:id' component = { Body } />
         </Switch>
       </Router>
     </div>
