@@ -97,13 +97,20 @@ const Body = ( {match} ) => {
                         <p className="body-housing-description-paragraph">
                         Description
 
-** Due to Covid-19 Level 3, we are unable to conduct open homes. Please register your interest through Viewing Tracker http://www.crockers.viewingtracker.com (please copy and paste this link). To apply use the TPS portal www.tpsportal.co.nz/tenancy_application/tps1199 **
-
-Stunning and spacious family home over two levels. This gorgeous home offers 5 very generous bedrooms with three bathrooms. Open plan lounge, dining and kitchen, with the first of five bedrooms and one bathroom on ground level. The first level features four other spacious bedrooms, all with ample wardrobe and storage space. Master with large wardrobe space and ensuite. Full family bathroom services the remaining bedrooms. Neutral decor throughout this beautiful home. Single internal entrance garage with further off street parking. The second of two houses on driveway. Fully enclosed easy care garden. Quiet location. Zoned for ever popular Cosgrove School.
-
-** COST TO MOVE IN: One weeks rent in advance and Bond of 4 weeks rent.
-Please drive by to view the exterior, but please do not enter the grounds of the property.
-If you are interested, please call to view the interior.
+                        ** Due to Covid-19 Level 3, we are unable to conduct open homes. Please register your interest through Viewing Tracker http://<br/>
+                        www.crockers.viewingtracker.com (please copy and paste this link). To apply use the TPS portal www.tpsportal.co.nz/<br/>
+                        tenancy_application/tps1199 **<br/>
+                        <br/>
+                        Stunning and spacious family home over two levels. This gorgeous home offers 5 very generous bedrooms with three <br/>
+                        bathrooms. Open plan lounge, dining and kitchen, with the first of five bedrooms and one bathroom on ground level. The first <br/>
+                        level features four other spacious bedrooms, all with ample wardrobe and storage space. Master with large wardrobe space <br/>
+                        and ensuite. Full family bathroom services the remaining bedrooms. Neutral decor throughout this beautiful home. Single <br/>
+                        internal entrance garage with further off street parking. The second of two houses on driveway. Fully enclosed easy care <br/>
+                        garden. Quiet location. Zoned for ever popular Cosgrove School.<br/>
+                        <br/>
+                        ** COST TO MOVE IN: One weeks rent in advance and Bond of 4 weeks rent.<br/>
+                        Please drive by to view the exterior, but please do not enter the grounds of the property.<br/>
+                        If you are interested, please call to view the interior.
                         </p>
                     </div>
 
@@ -128,7 +135,7 @@ If you are interested, please call to view the interior.
                     <div className="body-footer">
                         <div className="body-footer-left">
                             <button type="button" className="body-return-button">
-                                <SettingsBackupRestoreIcon/> Back to Search Result
+                                {/* <SettingsBackupRestoreIcon/>*/} <p className="brbt">Back to Search Result</p> 
                             </button>
                         </div>
                         <div className="body-footer-right">
@@ -148,7 +155,6 @@ If you are interested, please call to view the interior.
                            <button type="button" className="body-right-book-btn">
                                 Book a Viewing
                             </button>
-                            {/* insert dialog */}
                             <button type="button" className="body-right-apply-btn">
                                 Apply Online
                             </button>
@@ -167,16 +173,17 @@ If you are interested, please call to view the interior.
                         </h1>
                         <p className="body-right-costs">
                             One week's rent in <br/>
-                            advance: ${property.price} <br/>
+                            Advance: ${property.price} <br/>
                             Bond (4 week's rent): ${property.price*4}
                         </p>
                     </div>
 
                     <div className="body-right-icons">
-                        <TwitterIcon/>
-                        <FacebookIcon/>
-                        <AlternateEmailIcon/>
-                        <InstagramIcon/>
+                        {/* brib stands for body-right-icons-btns */}
+                        <button type="button" className="brib"><TwitterIcon/></button>
+                        <button type="button" className="brib"><FacebookIcon/></button>
+                        <button type="button" className="brib"><AlternateEmailIcon/></button>
+                        <button type="button" className="brib"><InstagramIcon/></button>
                     </div>
 
                 </div>
