@@ -1,25 +1,25 @@
-export const Sort = (items) => {
+export const Sort = (rentals) => {
 
-    const swap = (items, leftIndex, rightIndex) => {
-        let temp = items[leftIndex];
-        items[leftIndex] = items[rightIndex];
-        items[rightIndex] = temp;
+    const swap = (rentals, leftIndex, rightIndex) => {
+        let temp = rentals[leftIndex];
+        rentals[leftIndex] = rentals[rightIndex];
+        rentals[rightIndex] = temp;
     }
 
-    const partition = (items, left, right) => {
-        let pivot = items[Math.floor((right + left) / 2)],
+    const partition = (rentals, left, right) => {
+        let pivot = rentals[Math.floor((right + left) / 2)],
         i = left,
         j = right;
 
         while (i <= j) {
-            while (items[i].price < pivot.price) {
+            while (rentals[i].price < pivot.price) {
                 i++
             }
-            while (items[j].price > pivot.price) {
+            while (rentals[j].price > pivot.price) {
                 j--
             }
             if (i <= j) {
-                swap(items, i, j);
+                swap(rentals, i, j);
                 i++
                 j--
             }
@@ -27,25 +27,25 @@ export const Sort = (items) => {
         return i;
     }
 
-    const quickSort = (items, left, right) => {
+    const quickSort = (rentals, left, right) => {
         let index;
-        if (items.length > 1) {
-            index = partition(items, left, right);
+        if (rentals.length > 1) {
+            index = partition(rentals, left, right);
             if (left < index - 1) {
-                quickSort(items, left, index - 1);
+                quickSort(rentals, left, index - 1);
             }
             if (index < right) {
-                quickSort(items, index, right);
+                quickSort(rentals, index, right);
             }
-            return items;
+            return rentals;
         }
     }
 
     try {
-        const sortedArray = quickSort(items, 0, items.length - 1);
+        const sortedArray = quickSort(rentals, 0, rentals.length - 1);
         return sortedArray;
     } catch {
-        console.log('no items')
+        console.log('no rentals')
     }
 
     
