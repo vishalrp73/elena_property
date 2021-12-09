@@ -25,7 +25,7 @@ const Footer = () => {
                 <button type="button" className="footer-btns">Property Search</button>
                 <button type="button" className="footer-btns">FAQ</button>
                 <button type="button" className="footer-btns">Contact Us</button>
-                <button type="button" className="footer-btns-search"><SearchIcon className="search-btn"/></button>
+                <button type="button" className="footer-btns-search"><SearchIcon className="search-button"/></button>
             </div>
         </div>
     )

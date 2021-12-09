@@ -3,6 +3,7 @@ import Search from './components/search/search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Body from './components/propertyBody/Body';
 import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/Footer';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
             <Route exact path = '/property/:id' component = { Body } />
           </Switch>
       </Router>
+      <Footer />
       </div>
     </div>
   );
