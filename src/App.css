@@ -8,3 +8,10 @@ html, body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+.core-content-container {
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}

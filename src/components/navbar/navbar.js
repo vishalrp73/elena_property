@@ -53,9 +53,11 @@ const Navbar = () => {
     <>
       <Nav>
         <Logo>
-          <div>
-            <img src={nav} alt="Logo" style={{width: "100px"}} />
-          </div>
+          <NavLink to={"/"} onClick = {() => pushNav()}>
+            <div>
+              <img src={nav} alt="Logo" style={{width: "100px"}} />
+            </div>
+          </NavLink>
         </Logo>
         <Menu>
           <div className="nav">

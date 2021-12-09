@@ -173,7 +173,7 @@ const Search = () => {
     }, [filtered]);
 
     return (
-        <div className = 'body-container'>
+        <div className = 'body-content-container'>
 
         <div className = 'search-wrapper'>
 

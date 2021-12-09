@@ -10,19 +10,20 @@ function App() {
   
   return (
     <div className="App">
-    <Navbar/>
 
-
+    <div className = 'core-content-container'>
+      <Navbar />
       <Router>
-        <Switch>
+          <Switch>
 
-          <Route exact path = '/'>
-            <Search />
-          </Route>
+            <Route exact path = '/'>
+              <Search />
+            </Route>
 
-          <Route exact path = '/property/:id' component = { Body } />
-        </Switch>
+            <Route exact path = '/property/:id' component = { Body } />
+          </Switch>
       </Router>
+      </div>
     </div>
   );
 }
