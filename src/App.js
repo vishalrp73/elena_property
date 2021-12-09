@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Body from './components/propertyBody/Body';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   

@@ -1,0 +1,52 @@
+h2 {
+  font-family: Roboto;
+  color: grey;
+  font-style: normal;
+  font-weight: normal;
+}
+
+p {
+  font-family: Roboto;
+}
+
+.body-right-apply-btn {
+  width: 180px;
+  height: 55px;
+  background-color: #b71234;
+  border-color: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.bottom_details-wrapper {
+    display: flex;
+    width: 100%;
+    margin: auto auto 0 auto;
+}
+
+.bot-wrap {
+    display: flex;
+    margin: auto auto auto 0;
+    align-items: center;
+    color: #848484;
+}
+
+.bot-icon {
+    width: 14px;
+    height: 10px;
+}
+
+.num-text {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.price-wrap-bot {
+    margin: auto 0 auto auto;
+}
+
+.price-text {
+    margin: 0;
+}
