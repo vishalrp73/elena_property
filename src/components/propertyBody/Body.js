@@ -148,6 +148,7 @@ If you are interested, please call to view the interior.
                            <button type="button" className="body-right-book-btn">
                                 Book a Viewing
                             </button>
+                            {/* insert dialog */}
                             <button type="button" className="body-right-apply-btn">
                                 Apply Online
                             </button>
