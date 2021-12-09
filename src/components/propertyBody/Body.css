@@ -18,7 +18,7 @@
 }
 
 .body-header{
-    width: 20vw;
+    width: 60vw;
     height: auto;
     display: flex;
 }
@@ -43,7 +43,7 @@
     color: #B71234;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 10vw;
+    margin-left: 32vw;
     border-radius: 20px;
 }
 
@@ -68,8 +68,8 @@
     font-size: 20px;
     cursor: pointer;
     border-radius: 20px;
-    margin-left: 2vw;
-    margin-top: 15vh;
+    margin-left: 6vw;
+    margin-top: 20vh;
 }
 
 .body-right-apply-btn{
@@ -81,8 +81,8 @@
     font-size: 20px;
     cursor: pointer;
     border-radius: 20px;
-    margin-top: 1vh;
-    margin-left: 2vw;
+    margin-top: 3vh;
+    margin-left: 6vw;
 }
 
 .body-right{
@@ -94,8 +94,10 @@
 }
 
 .body-right-agent{
-    margin-top: 2vh;
+    margin-top: 5vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 30px;
 }
 
 .body-right-terms{
@@ -111,7 +113,7 @@
 }
 
 .body-navbar-right{
-    margin-left: 16vw;
+    margin-left: 40vw;
 }
 
 .body-print-btn{
@@ -122,6 +124,77 @@
     font-size: 25px;
 }
 
+.body-header-left{
+    width: 40vw;
+}
+
 .body-header-right{
-    margin-left: 10vw;
+    text-align: end;
+    width: 16vw;
+}
+
+.body-right-move{
+    margin-left: 2vw;
+}
+
+.body-right-costs{
+    margin-left: 2vw;
+    font-size: 20px;
+}
+
+.brib{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #B71234;
+    margin-left: 2vw;
+}
+
+.body-icons{
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.body-icons-left{
+    width: 30vw;
+}
+
+.body-location-btn{
+    justify-content: end;
+    text-align: end;
+    margin-left: 22vw;
+    cursor: pointer;
+}
+
+.body-right-icons{
+    margin-top: 3vh;
+}
+
+.body-return-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    color: #B71234;
+    font-size: 20px;
+}
+
+.brclt{
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 2px solid#B71234;
+}
+
+.brcrt{
+    font-size: 30px;
+    border-bottom: 2px solid#B71234;
+}
+
+.body-rental-credentials-right{
+   text-align: center;
+}
+
+.body-housing-description-paragraph{
+    font-size: 20px;
 }
