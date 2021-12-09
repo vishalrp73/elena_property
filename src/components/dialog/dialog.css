@@ -19,11 +19,24 @@ p {
   cursor: pointer;
   border-radius: 20px;
 }
+.submit {
+    width: 180px;
+    height: 55px;
+    background-color: #b71234;
+    border-color: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 22px;
+    margin-right: 0px;
+  }
 
 .bottom_details-wrapper {
     display: flex;
     width: 100%;
     margin: auto auto 0 auto;
+    padding-bottom: 36px;
 }
 
 .bot-wrap {
@@ -49,4 +62,10 @@ p {
 
 .price-text {
     margin: 0;
+}
+
+.hello{
+    padding-top: 30px;
+    text-align: left;
+    line-height: 1.5;
 }

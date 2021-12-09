@@ -23,30 +23,34 @@ function Form() {
             id="outlined-basic"
             label="First Name"
             variant="outlined"
+            style={{ width: "267px"}}
           />
           <TextField
             required
             id="outlined-basic"
             label="Last Name"
             variant="outlined"
+            style={{ width: "267px"}}
           />
           <TextField
             required
             id="outlined-basic"
             label="Phone Number"
             variant="outlined"
+            style={{ width: "267px"}}
           />
           <TextField
             required
             id="outlined-basic"
             label="E-mail"
             variant="outlined"
+            style={{ width: "267px"}}
           />
           <TextareaAutosize
             aria-label="minimum height"
             minRows={10}
             placeholder="Comment"
-            style={{ width: "400px", marginTop: "10px" }}
+            style={{ width: "567px", marginTop: "10px" }}
           />
         </div>
         

@@ -98,11 +98,14 @@ export default function FormDialog(props) {
                   </Grid>
                   <Grid item xs="4">
                     <Item>
+                    <div className="hello">
                       {property.address}
                       <div className="price-wrap-bot">
-                        <h5 className="price-text">
+                        <p className="price-text">
                           ${property.price}/per week
-                        </h5>
+                        </p>
+                        <p className = 'available-text'>Available: { property.availability }</p>
+                      </div>
                       </div>
                       <div className="bottom_details-wrapper">
                         <div className="bot-wrap">
@@ -128,22 +131,22 @@ export default function FormDialog(props) {
                   style={{
                     width: "600px",
                     paddingBottom: "10px",
-                    paddingTop: "10px",
+                    paddingTop: "15px",
                   }}
                 />
 
                 <Form />
-              </DialogContent>
-              <DialogActions>
+                <DialogActions>
                 <button
                   type="button"
-                  className="body-right-apply-btn"
+                  className="submit"
                   onClick={handleClose}
-                  style={{ margin: "30px" }}
                 >
                   Submit
                 </button>
               </DialogActions>
+              </DialogContent>
+            
             </Dialog>{" "}
           </>
         ) : (
