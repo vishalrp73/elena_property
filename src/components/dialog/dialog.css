@@ -39,7 +39,7 @@ p {
     display: flex;
     width: 100%;
     margin: auto auto 0 auto;
-    padding-bottom: 36px;
+    padding-bottom: 12px;
 }
 
 .bot-wrap {
@@ -68,7 +68,9 @@ p {
 }
 
 .hello{
-    padding-top: 30px;
+  width: 200px;
+    padding-top: 24px;
+    padding-bottom: 3px;
     text-align: left;
-    line-height: 1.5;
+    line-height: 2;
 }

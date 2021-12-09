@@ -36,11 +36,12 @@ export default function FormDialog(props) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log("hello");
+    console.log("hello the modal is open");
   };
 
   const handleClose = () => {
     setOpen(false);
+    console.log("the modal is close: click apply online to open")
   };
   useEffect(() => {
     try {
@@ -86,6 +87,7 @@ export default function FormDialog(props) {
                   <Grid item xs="auto">
                     <Item>
                       {" "}
+                      {/* calling image as props and setting its size */}
                       <img
                         src={property.image}
                         className="guide-photos"
@@ -94,14 +96,14 @@ export default function FormDialog(props) {
                       />
                     </Item>
                   </Grid>
-                  <Grid item xs="4">
+                  <Grid item xs="5">
                     <Item>
-                    {/* The most annoying part */}
+                    {/* The most annoying part to style - details of the house */}
                       <div className="hello">
-                        {property.address}
+                        Address: {property.address}
                         <div className="price-wrap-bot">
                           <p className="price-text">
-                            ${property.price}/per week
+                           Week Rental: ${property.price}/per week
                           </p>
                           <p className="available-text">
                             Available: {property.availability}
