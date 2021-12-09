@@ -5,7 +5,8 @@ import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 
 function Form() {
-  const [name, setName] = useState("");
+  // this is to use later when I want to pass information into database
+  const [name, setName] = useState(""); 
 
   return (
     <div>
@@ -18,34 +19,36 @@ function Form() {
         autoComplete="off"
       >
         <div>
+        {/* textfields set to specified width */}
           <TextField
             required
             id="outlined-basic"
             label="First Name"
             variant="outlined"
-            style={{ width: "267px"}}
+            style={{ width: "267px" }}
           />
           <TextField
             required
             id="outlined-basic"
             label="Last Name"
             variant="outlined"
-            style={{ width: "267px"}}
+            style={{ width: "267px" }}
           />
           <TextField
             required
             id="outlined-basic"
             label="Phone Number"
             variant="outlined"
-            style={{ width: "267px"}}
+            style={{ width: "267px" }}
           />
           <TextField
             required
             id="outlined-basic"
             label="E-mail"
             variant="outlined"
-            style={{ width: "267px"}}
+            style={{ width: "267px" }}
           />
+          {/* comment section */}
           <TextareaAutosize
             aria-label="minimum height"
             minRows={10}
@@ -53,7 +56,6 @@ function Form() {
             style={{ width: "567px", marginTop: "10px" }}
           />
         </div>
-        
       </Box>
     </div>
   );

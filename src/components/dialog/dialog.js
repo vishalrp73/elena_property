@@ -1,28 +1,20 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { useState, useEffect } from "react";
 import "./dialog.css";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import bed_icon from "../../img/propertyPanel/bed-icon.png";
 import bath_icon from "../../img/propertyPanel/bath-icon.png";
 import parks_icon from "../../img/propertyPanel/parks-icon.png";
 import dialog from "../../img/dialog.PNG";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-
 import Form from "../dialog/form";
 import { makeStyles } from "@material-ui/core/styles";
 
+// making modal into specified width using paper
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {
     height: "886px",
@@ -30,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// maybe change this down the line annoying to work with
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -38,7 +31,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function FormDialog(props) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false); 
   const [property, setProperty] = useState();
 
   const handleClickOpen = () => {
@@ -57,7 +50,7 @@ export default function FormDialog(props) {
     }
   }, []);
 
-  const classes = useStyles(); // how to assign UseStyle
+  const classes = useStyles(); // how to assign UseStyles
 
   console.log(props);
 
@@ -71,6 +64,7 @@ export default function FormDialog(props) {
         Apply Online
       </button>
       <div>
+      {/* calling in values for the properties from property body window */}
         {property ? (
           <>
             <Dialog
@@ -79,11 +73,15 @@ export default function FormDialog(props) {
               maxWidth={"900px"}
               classes={{ paper: classes.dialogPaper }}
             >
-              <h2 style={{ padding: "5%" }}>You are booking a viewing for:</h2>
-
               <DialogContent
-                style={{ width: "742px", height: "886px", padding: "10%" }}
+                style={{
+                  width: "742px",
+                  height: "886px",
+                  padding: "10%",
+                  paddingTop: "5px",
+                }}
               >
+                <h4>You are booking a viewing for:</h4>
                 <Grid container rowSpacing={1}>
                   <Grid item xs="auto">
                     <Item>
@@ -98,14 +96,17 @@ export default function FormDialog(props) {
                   </Grid>
                   <Grid item xs="4">
                     <Item>
-                    <div className="hello">
-                      {property.address}
-                      <div className="price-wrap-bot">
-                        <p className="price-text">
-                          ${property.price}/per week
-                        </p>
-                        <p className = 'available-text'>Available: { property.availability }</p>
-                      </div>
+                    {/* The most annoying part */}
+                      <div className="hello">
+                        {property.address}
+                        <div className="price-wrap-bot">
+                          <p className="price-text">
+                            ${property.price}/per week
+                          </p>
+                          <p className="available-text">
+                            Available: {property.availability}
+                          </p>
+                        </div>
                       </div>
                       <div className="bottom_details-wrapper">
                         <div className="bot-wrap">
@@ -126,6 +127,7 @@ export default function FormDialog(props) {
                     </Item>
                   </Grid>
                 </Grid>
+                {/* temp solution to enter required details */}
                 <img
                   src={dialog}
                   style={{
@@ -136,17 +138,17 @@ export default function FormDialog(props) {
                 />
 
                 <Form />
+                {/* for now the submit button just closes the modal */}
                 <DialogActions>
-                <button
-                  type="button"
-                  className="submit"
-                  onClick={handleClose}
-                >
-                  Submit
-                </button>
-              </DialogActions>
+                  <button
+                    type="button"
+                    className="submit"
+                    onClick={handleClose}
+                  >
+                    Submit
+                  </button>
+                </DialogActions>
               </DialogContent>
-            
             </Dialog>{" "}
           </>
         ) : (
