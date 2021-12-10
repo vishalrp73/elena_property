@@ -1,0 +1,76 @@
+h4 {
+  font-family: Roboto;
+  color: #76676A;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  padding-top: 8%;
+  padding-bottom: 10px;
+}
+
+p {
+  font-family: Roboto;
+}
+
+.body-right-apply-btn {
+  width: 180px;
+  height: 55px;
+  background-color: #b71234;
+  border-color: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.submit {
+    width: 180px;
+    height: 55px;
+    background-color: #b71234;
+    border-color: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 22px;
+    margin-right: 0px;
+  }
+
+.bottom_details-wrapper {
+    display: flex;
+    width: 100%;
+    margin: auto auto 0 auto;
+    padding-bottom: 12px;
+}
+
+.bot-wrap {
+    display: flex;
+    margin: auto auto auto 0;
+    align-items: center;
+    color: #848484;
+}
+
+.bot-icon {
+    width: 14px;
+    height: 10px;
+}
+
+.num-text {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.price-wrap-bot {
+    margin: auto 0 auto auto;
+}
+
+.price-text {
+    margin: 0;
+}
+
+.hello{
+  width: 200px;
+    padding-top: 24px;
+    padding-bottom: 3px;
+    text-align: left;
+    line-height: 2;
+}

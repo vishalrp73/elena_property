@@ -10,6 +10,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import FormDialog from "../dialog/dialog";
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -28,6 +29,7 @@ const Body = ( {match} ) => {
         })
         .catch (err => console.log(err));
     }, [])
+    
 
     return(
         <div className="body-container">
@@ -144,6 +146,7 @@ const Body = ( {match} ) => {
                             </button>
                             <button type="button" className="body-footer-apply-btn">
                                 Apply Online
+                                <FormDialog/>
                             </button>
                         </div>
                     </div>
@@ -155,9 +158,10 @@ const Body = ( {match} ) => {
                            <button type="button" className="body-right-book-btn">
                                 Book a Viewing
                             </button>
-                            <button type="button" className="body-right-apply-btn">
-                                Apply Online
-                            </button>
+                            
+                            
+                            <FormDialog property={property}/>
+                            
                     </div>
 
                     <div className="body-right-agent">
